@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.OleDb;
 using System.Data;
+using MySql.Data.MySqlClient;
 
 namespace CtrlElevator
 {
@@ -12,23 +8,29 @@ namespace CtrlElevator
     {
         public void SaveLog(string act)
         {
-            string sql = "INSERT INTO [ActionLogs]([DATE], [TIME], [ACTIONS]) VALUES(@DATE, @TIME, @ACTIONS)";
-            OleDbCommand cmd = new OleDbCommand(sql, GlobalConnection.con);
-            string date = DateTime.Now.ToShortDateString();
-            string time = DateTime.Now.ToShortTimeString();
-            cmd.Parameters.AddWithValue("@DATE", date);
-            cmd.Parameters.AddWithValue("@TIME", time);
-            cmd.Parameters.AddWithValue("@ACTIONS", act);
-            cmd.ExecuteNonQuery();
+            const string sql = "INSERT INTO `ActionLogs` (`DATE`, `TIME`, `ACTIONS`) VALUES (@DATE, @TIME, @ACTIONS)";
+
+            GlobalConnection.Open();
+
+            using (var cmd = new MySqlCommand(sql, GlobalConnection.Con))
+            {
+                cmd.Parameters.AddWithValue("@DATE", DateTime.Now.Date);
+                cmd.Parameters.AddWithValue("@TIME", DateTime.Now.TimeOfDay);
+                cmd.Parameters.AddWithValue("@ACTIONS", act ?? string.Empty);
+
+                cmd.ExecuteNonQuery();
+            }
         }
 
         public DataTable ViewActionLog()
         {
-            string sql = "SELECT * FROM ActionLogs";
-            OleDbDataAdapter da = new OleDbDataAdapter(sql, GlobalConnection.con);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "ActionLogs");
-            return ds.Tables[0];
+            const string sql = "SELECT * FROM `ActionLogs`";
+            using (var da = new MySqlDataAdapter(sql, GlobalConnection.Con))
+            {
+                var ds = new DataSet();
+                da.Fill(ds, "ActionLogs");
+                return ds.Tables[0];
+            }
         }
     }
 }

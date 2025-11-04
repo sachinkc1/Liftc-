@@ -1,19 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.OleDb;
+using System.Configuration;
+using System.Data;
+using MySql.Data.MySqlClient;
 
 namespace CtrlElevator
 {
-    class GlobalConnection
+    static class GlobalConnection
     {
-        public static OleDbConnection con;
-        public static void DbConnection()
+        public static readonly MySqlConnection Con;
+
+        static GlobalConnection()
         {
-            con = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=ElevatorLog.mdb");
-            con.Open();
+            string cs = ConfigurationManager.ConnectionStrings["DefaultMySql"]?.ConnectionString;
+            if (string.IsNullOrWhiteSpace(cs))
+                throw new InvalidOperationException("Connection string 'DefaultMySql' not found in App.config.");
+
+            Con = new MySqlConnection(cs);
+        }
+
+        public static void Open()
+        {
+            if (Con.State != ConnectionState.Open)
+                Con.Open();
+        }
+
+        public static void Close()
+        {
+            if (Con.State != ConnectionState.Closed)
+                Con.Close();
         }
     }
 }

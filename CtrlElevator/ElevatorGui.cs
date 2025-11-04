@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace CtrlElevator
 {
@@ -27,7 +29,27 @@ namespace CtrlElevator
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            GlobalConnection.DbConnection();
+            try
+            {
+                using (var con = DbConnectionFactory.CreateConnection())
+                {
+                    con.Open();
+                    // Lightweight verification of connectivity
+                    using (var cmd = new MySqlCommand("SELECT 1", con))
+                    {
+                        cmd.ExecuteScalar();
+                    }
+                }
+            }
+            catch (MySqlException ex) // <-- catch the MySQL provider exception
+            {
+                MessageBox.Show($"Database connection failed: {ex.Message}", "DB Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //      log ex.Number, ex.Server, and masked connection string for diagnostics
+            }
+            catch (InvalidOperationException ex) // missing config key
+            {
+                MessageBox.Show($"Configuration error: {ex.Message}", "Config Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -75,20 +97,20 @@ namespace CtrlElevator
 
         private void btnDown_Click(object sender, EventArgs e)
         {
-                go_up = true;
-                btnDown.BackColor = Color.Green;
-                timer_door_close_up.Enabled = true;
-                timer_door_open_up.Enabled = false;
-                arrive_1 = false;
-                btnUp.Enabled = false;
-                btnClose.Enabled = false;
-                btnOpen.Enabled = false;
-                btn1Floor.Enabled = false;
+            go_up = true;
+            btnDown.BackColor = Color.Green;
+            timer_door_close_up.Enabled = true;
+            timer_door_open_up.Enabled = false;
+            arrive_1 = false;
+            btnUp.Enabled = false;
+            btnClose.Enabled = false;
+            btnOpen.Enabled = false;
+            btn1Floor.Enabled = false;
         }
 
         private void timer_door_close_down_Tick(object sender, EventArgs e)
         {
-            if (doorLeftdown.Left<=150 && doorRightdown.Left>=254)
+            if (doorLeftdown.Left <= 165 && doorRightdown.Left >= 150)
             {
                 CtrlDoor dcd = new CtrlDoor();
                 dcd.Timer_door_close_down(doorLeftdown, doorRightdown);
@@ -110,7 +132,7 @@ namespace CtrlElevator
 
         private void timer_up_Tick(object sender, EventArgs e)
         {
-            if(pictureElevator.Top>=82)
+            if (pictureElevator.Top >= 82)
             {
                 Elevator eu = new Elevator();
                 eu.Timer_up(pictureElevator);
@@ -136,7 +158,7 @@ namespace CtrlElevator
 
         private void timer_door_close_up_Tick(object sender, EventArgs e)
         {
-            if (doorLeftup.Left <= 150 && doorRightup.Left >= 254)
+            if (doorLeftup.Left <= 165 && doorRightup.Left >= 150)
             {
                 CtrlDoor dcu = new CtrlDoor();
                 dcu.Timer_door_close_up(doorLeftup, doorRightup);
@@ -159,7 +181,7 @@ namespace CtrlElevator
 
         private void timer_down_Tick(object sender, EventArgs e)
         {
-            if (pictureElevator.Top <= 431)
+            if (pictureElevator.Top <= 400)
             {
                 Elevator ed = new Elevator();
                 ed.Timer_down(pictureElevator);
@@ -186,7 +208,7 @@ namespace CtrlElevator
 
         private void timer_door_open_up_Tick(object sender, EventArgs e)
         {
-            if (doorLeftup.Left >= 50 && doorRightup.Left <= 340)
+            if (doorLeftup.Left >= 108 && doorRightup.Left <= 310)
             {
                 CtrlDoor dou = new CtrlDoor();
                 dou.Timer_door_open_up(doorLeftup, doorRightup);
@@ -203,7 +225,7 @@ namespace CtrlElevator
 
         private void timer_door_open_down_Tick(object sender, EventArgs e)
         {
-            if (doorLeftdown.Left >= 51 && doorRightdown.Left <= 340)
+            if (doorLeftdown.Left >= 108 && doorRightdown.Left <= 310)
             {
                 CtrlDoor dod = new CtrlDoor();
                 dod.Timer_door_open_down(doorLeftdown, doorRightdown);
@@ -289,6 +311,36 @@ namespace CtrlElevator
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void doorRightdown_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

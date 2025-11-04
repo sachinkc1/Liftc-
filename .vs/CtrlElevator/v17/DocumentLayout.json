@@ -1,0 +1,191 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "G:\\vs.sa\\Elevator_Control\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:1:0:{8CE90B9A-5CFF-4D04-A175-0E5306FC72FD}|CtrlElevator\\CtrlElevator.csproj|g:\\vs.sa\\elevator_control\\ctrlelevator\\elevatorgui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:1:0:{8CE90B9A-5CFF-4D04-A175-0E5306FC72FD}|CtrlElevator\\CtrlElevator.csproj|solutionrelative:ctrlelevator\\elevatorgui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8CE90B9A-5CFF-4D04-A175-0E5306FC72FD}|CtrlElevator\\CtrlElevator.csproj|G:\\vs.sa\\Elevator_Control\\ctrlelevator\\elevatorgui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8CE90B9A-5CFF-4D04-A175-0E5306FC72FD}|CtrlElevator\\CtrlElevator.csproj|solutionrelative:ctrlelevator\\elevatorgui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8CE90B9A-5CFF-4D04-A175-0E5306FC72FD}|CtrlElevator\\CtrlElevator.csproj|G:\\vs.sa\\Elevator_Control\\ctrlelevator\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{8CE90B9A-5CFF-4D04-A175-0E5306FC72FD}|CtrlElevator\\CtrlElevator.csproj|solutionrelative:ctrlelevator\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:1:0:{8CE90B9A-5CFF-4D04-A175-0E5306FC72FD}|CtrlElevator\\CtrlElevator.csproj|G:\\vs.sa\\Elevator_Control\\ctrlelevator\\dbcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:1:0:{8CE90B9A-5CFF-4D04-A175-0E5306FC72FD}|CtrlElevator\\CtrlElevator.csproj|solutionrelative:ctrlelevator\\dbcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8CE90B9A-5CFF-4D04-A175-0E5306FC72FD}|CtrlElevator\\CtrlElevator.csproj|G:\\vs.sa\\Elevator_Control\\ctrlelevator\\globalconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8CE90B9A-5CFF-4D04-A175-0E5306FC72FD}|CtrlElevator\\CtrlElevator.csproj|solutionrelative:ctrlelevator\\globalconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:2:0:{8CE90B9A-5CFF-4D04-A175-0E5306FC72FD}|CtrlElevator\\CtrlElevator.csproj|G:\\vs.sa\\Elevator_Control\\ctrlelevator\\dbcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:2:0:{8CE90B9A-5CFF-4D04-A175-0E5306FC72FD}|CtrlElevator\\CtrlElevator.csproj|solutionrelative:ctrlelevator\\dbcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8CE90B9A-5CFF-4D04-A175-0E5306FC72FD}|CtrlElevator\\CtrlElevator.csproj|G:\\vs.sa\\Elevator_Control\\ctrlelevator\\elevator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8CE90B9A-5CFF-4D04-A175-0E5306FC72FD}|CtrlElevator\\CtrlElevator.csproj|solutionrelative:ctrlelevator\\elevator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:2:0:{8CE90B9A-5CFF-4D04-A175-0E5306FC72FD}|CtrlElevator\\CtrlElevator.csproj|G:\\vs.sa\\Elevator_Control\\ctrlelevator\\elevatorgui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:2:0:{8CE90B9A-5CFF-4D04-A175-0E5306FC72FD}|CtrlElevator\\CtrlElevator.csproj|solutionrelative:ctrlelevator\\elevatorgui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8CE90B9A-5CFF-4D04-A175-0E5306FC72FD}|CtrlElevator\\CtrlElevator.csproj|G:\\vs.sa\\Elevator_Control\\ctrlelevator\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8CE90B9A-5CFF-4D04-A175-0E5306FC72FD}|CtrlElevator\\CtrlElevator.csproj|solutionrelative:ctrlelevator\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8CE90B9A-5CFF-4D04-A175-0E5306FC72FD}|CtrlElevator\\CtrlElevator.csproj|G:\\vs.sa\\Elevator_Control\\ctrlelevator\\elevatorgui.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{8CE90B9A-5CFF-4D04-A175-0E5306FC72FD}|CtrlElevator\\CtrlElevator.csproj|solutionrelative:ctrlelevator\\elevatorgui.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 337,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GlobalConnection.cs",
+              "DocumentMoniker": "G:\\vs.sa\\Elevator_Control\\CtrlElevator\\GlobalConnection.cs",
+              "RelativeDocumentMoniker": "CtrlElevator\\GlobalConnection.cs",
+              "ToolTip": "G:\\vs.sa\\Elevator_Control\\CtrlElevator\\GlobalConnection.cs",
+              "RelativeToolTip": "CtrlElevator\\GlobalConnection.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAuwCAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T16:02:29.994Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ElevatorGui.cs",
+              "DocumentMoniker": "G:\\vs.sa\\Elevator_Control\\CtrlElevator\\ElevatorGui.cs",
+              "RelativeDocumentMoniker": "CtrlElevator\\ElevatorGui.cs",
+              "ToolTip": "G:\\vs.sa\\Elevator_Control\\CtrlElevator\\ElevatorGui.cs",
+              "RelativeToolTip": "CtrlElevator\\ElevatorGui.cs",
+              "ViewState": "AgIAAE0BAAAAAAAAAADwv1MBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-02T12:51:34.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DbCommand.cs",
+              "DocumentMoniker": "G:\\vs.sa\\Elevator_Control\\CtrlElevator\\DbCommand.cs",
+              "RelativeDocumentMoniker": "CtrlElevator\\DbCommand.cs",
+              "ToolTip": "G:\\vs.sa\\Elevator_Control\\CtrlElevator\\DbCommand.cs",
+              "RelativeToolTip": "CtrlElevator\\DbCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T09:19:13.954Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ElevatorGui.cs",
+              "DocumentMoniker": "G:\\vs.sa\\Elevator_Control\\CtrlElevator\\ElevatorGui.cs",
+              "RelativeDocumentMoniker": "CtrlElevator\\ElevatorGui.cs",
+              "ToolTip": "G:\\vs.sa\\Elevator_Control\\CtrlElevator\\ElevatorGui.cs",
+              "RelativeToolTip": "CtrlElevator\\ElevatorGui.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAowDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T07:47:28.266Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DbCommand.cs",
+              "DocumentMoniker": "G:\\vs.sa\\Elevator_Control\\CtrlElevator\\DbCommand.cs",
+              "RelativeDocumentMoniker": "CtrlElevator\\DbCommand.cs",
+              "ToolTip": "G:\\vs.sa\\Elevator_Control\\CtrlElevator\\DbCommand.cs",
+              "RelativeToolTip": "CtrlElevator\\DbCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T07:43:28.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ElevatorGui.cs [Design]",
+              "DocumentMoniker": "G:\\vs.sa\\Elevator_Control\\CtrlElevator\\ElevatorGui.cs",
+              "RelativeDocumentMoniker": "CtrlElevator\\ElevatorGui.cs",
+              "ToolTip": "C:\\Users\\Sachin Khatri\\source\\repos\\Elevator_Control\\CtrlElevator\\ElevatorGui.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-02T16:10:45.621Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Elevator.cs",
+              "DocumentMoniker": "G:\\vs.sa\\Elevator_Control\\CtrlElevator\\Elevator.cs",
+              "RelativeDocumentMoniker": "CtrlElevator\\Elevator.cs",
+              "ToolTip": "G:\\vs.sa\\Elevator_Control\\CtrlElevator\\Elevator.cs",
+              "RelativeToolTip": "CtrlElevator\\Elevator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-02T15:13:51.972Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "G:\\vs.sa\\Elevator_Control\\CtrlElevator\\Properties\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "CtrlElevator\\Properties\\AssemblyInfo.cs",
+              "ToolTip": "G:\\vs.sa\\Elevator_Control\\CtrlElevator\\Properties\\AssemblyInfo.cs",
+              "RelativeToolTip": "CtrlElevator\\Properties\\AssemblyInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-02T15:11:18.199Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "App.config",
+              "DocumentMoniker": "G:\\vs.sa\\Elevator_Control\\CtrlElevator\\App.config",
+              "RelativeDocumentMoniker": "CtrlElevator\\App.config",
+              "ToolTip": "G:\\vs.sa\\Elevator_Control\\CtrlElevator\\App.config",
+              "RelativeToolTip": "CtrlElevator\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-11-03T02:10:47.437Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ElevatorGui.resx",
+              "DocumentMoniker": "G:\\vs.sa\\Elevator_Control\\CtrlElevator\\ElevatorGui.resx",
+              "RelativeDocumentMoniker": "CtrlElevator\\ElevatorGui.resx",
+              "ToolTip": "G:\\vs.sa\\Elevator_Control\\CtrlElevator\\ElevatorGui.resx",
+              "RelativeToolTip": "CtrlElevator\\ElevatorGui.resx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAApwIwAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-11-02T16:38:56.71Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
