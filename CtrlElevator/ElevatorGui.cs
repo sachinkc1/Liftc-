@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using System.Windows.Forms;
 
 namespace CtrlElevator
 {
@@ -20,10 +19,54 @@ namespace CtrlElevator
         bool arrive_1 = false;
         DbCommand dbcmd = new DbCommand();
 
+        // Digital floor display
+        private Label lblFloorDisplay;
+
+        // Auto-close timer for ground floor (20 seconds)
+        private Timer timerAutoCloseGround;
 
         public ElevatorGui()
         {
             InitializeComponent();
+
+            // Create a simple digital-style label and add it to the form
+            lblFloorDisplay = new Label
+            {
+                Name = "lblFloorDisplay",
+                AutoSize = false,
+                Size = new Size(80, 48),
+                Location = new Point(this.ClientSize.Width - 1045, 200), // top-right-ish
+                Anchor = AnchorStyles.Top | AnchorStyles.Right,
+                Font = new Font("Segoe UI", 20F, FontStyle.Bold),
+                TextAlign = ContentAlignment.MiddleCenter,
+                BackColor = Color.Black,
+                ForeColor = Color.Lime,
+                BorderStyle = BorderStyle.FixedSingle,
+                Text = ""
+            };
+            this.Controls.Add(lblFloorDisplay);
+
+            // Initialize auto-close timer (20 seconds)
+            timerAutoCloseGround = new Timer { Interval = 5000 }; // 20,000 ms = 20 sec
+            timerAutoCloseGround.Tick += timerAutoCloseGround_Tick;
+
+            // Set initial display based on elevator position if possible
+            try
+            {
+                if (pictureElevator != null)
+                {
+                    // Choose a threshold that matches your layout. Adjust if needed.
+                    lblFloorDisplay.Text = pictureElevator.Top > 240 ? "G" : "1";
+                }
+                else
+                {
+                    lblFloorDisplay.Text = "G";
+                }
+            }
+            catch
+            {
+                lblFloorDisplay.Text = "G";
+            }
             //MessageBox.Show("" + doorLeftup.Left);
         }
 
@@ -68,6 +111,12 @@ namespace CtrlElevator
             timer_door_close_down.Enabled = true;
             timer_door_open_down.Enabled = false;
             arrive_G = false;
+
+            // indicate movement
+            lblFloorDisplay.Text = "Moving";
+
+            // stop auto-close while moving
+            timerAutoCloseGround.Enabled = false;
         }
 
         private void doorLeftdown_Click(object sender, EventArgs e)
@@ -106,6 +155,12 @@ namespace CtrlElevator
             btnClose.Enabled = false;
             btnOpen.Enabled = false;
             btn1Floor.Enabled = false;
+
+            // indicate movement
+            lblFloorDisplay.Text = "Moving";
+
+            // stop auto-close while moving
+            timerAutoCloseGround.Enabled = false;
         }
 
         private void timer_door_close_down_Tick(object sender, EventArgs e)
@@ -117,9 +172,13 @@ namespace CtrlElevator
             }
             else
             {
+                // Doors finished closing
                 timer_door_close_down.Enabled = false;
                 dbcmd.SaveLog("Ground Floor Door Closing");
                 LoadData();
+
+                // Ensure auto-close timer is stopped when closing begins/completes
+                timerAutoCloseGround.Enabled = false;
 
                 if (go_down == true)
                 {
@@ -153,6 +212,9 @@ namespace CtrlElevator
                 timer_door_close_up.Enabled = false;
                 arrive_1 = true;
                 arrive_G = false;
+
+                // arrived first floor -> update display
+                lblFloorDisplay.Text = "1";
             }
         }
 
@@ -203,6 +265,9 @@ namespace CtrlElevator
                 timer_door_close_down.Enabled = false;
                 arrive_G = true;
                 arrive_1 = false;
+
+                // arrived ground floor -> update display
+                lblFloorDisplay.Text = "G";
             }
         }
 
@@ -232,9 +297,16 @@ namespace CtrlElevator
             }
             else
             {
+                // Doors finished opening
                 timer_door_open_down.Enabled = false;
                 dbcmd.SaveLog("Ground Floor Door Opening");
                 LoadData();
+
+                // Start auto-close countdown only when doors are fully open and elevator is at ground
+                if (arrive_G)
+                {
+                    timerAutoCloseGround.Enabled = true;
+                }
 
             }
         }
@@ -243,6 +315,9 @@ namespace CtrlElevator
         {
             if (arrive_G == true)
             {
+                // manual close: cancel auto-close timer
+                timerAutoCloseGround.Enabled = false;
+
                 timer_door_close_down.Enabled = true;
                 timer_door_open_down.Enabled = false;
             }
@@ -259,6 +334,9 @@ namespace CtrlElevator
             {
                 timer_door_open_down.Enabled = true;
                 timer_door_close_down.Enabled = false;
+
+                // If user explicitly opens doors, ensure auto-close will start after they finish opening.
+                timerAutoCloseGround.Enabled = false;
             }
             else if (arrive_1 == true)
             {
@@ -274,6 +352,12 @@ namespace CtrlElevator
             arrive_1 = false;
             timer_door_close_up.Enabled = true;
             timer_door_open_up.Enabled = false;
+
+            // indicate movement
+            lblFloorDisplay.Text = "Moving";
+
+            // stop auto-close while moving
+            timerAutoCloseGround.Enabled = false;
         }
 
         private void btn1Floor_Click(object sender, EventArgs e)
@@ -283,11 +367,35 @@ namespace CtrlElevator
             arrive_G = false;
             timer_door_close_down.Enabled = true;
             timer_door_open_down.Enabled = false;
+
+            // indicate movement
+            lblFloorDisplay.Text = "Moving";
+
+            // stop auto-close while moving
+            timerAutoCloseGround.Enabled = false;
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        // Auto-close tick handler: closes ground-floor doors after 20s
+        private void timerAutoCloseGround_Tick(object sender, EventArgs e)
+        {
+            // stop the auto timer immediately to avoid re-entry
+            timerAutoCloseGround.Enabled = false;
+
+            // Only close if elevator is still at ground and doors are not already closing
+            if (arrive_G)
+            {
+                // Trigger door close sequence for ground floor
+                timer_door_close_down.Enabled = true;
+                timer_door_open_down.Enabled = false;
+
+                dbcmd.SaveLog("Auto-close: Ground Floor Doors closed after 20 seconds");
+                LoadData();
+            }
         }
 
         public void LoadData()
